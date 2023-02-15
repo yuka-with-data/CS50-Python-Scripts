@@ -22,7 +22,6 @@ def request_api() -> float:
         r = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
         # get the JSON content and save it into dict
         bpi_dict = r.json()
-        # print(bpi_dict)
         # accessing bpi_dict and retreve rate_float data
         rate = bpi_dict["bpi"]["USD"]["rate_float"]
         return rate
@@ -32,7 +31,6 @@ def request_api() -> float:
 # generate price
 def generate_price(n, rate: float):
     bitcoin_price = n*rate
-    # print(f"${bitcoin_price:,.4f}")
     return bitcoin_price
 
 def main():

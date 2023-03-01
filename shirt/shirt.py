@@ -25,13 +25,11 @@ def command_line_check():
     # if more CLA
     if len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
-
     # extract ext lowercased
     ext1 = splitext(sys.argv[1].lower())[1]
     ext2 = splitext(sys.argv[2].lower())[1]
     if not ext1 == ext2:
         sys.exit("Input and Output have different extensions")
-
     # if ext is not png, jpeg, jpg
     extension = (".png", ".jpeg", ".jpg")
     if ext1 not in extension:

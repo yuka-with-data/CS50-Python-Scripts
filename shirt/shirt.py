@@ -43,9 +43,9 @@ def image_edit():
             # open shirt file
             Image.open("shirt.png", mode='r') as shirt
         ):
-                # fit the input image based on the shirt image size
+            # fit the input image based on the shirt image size
             resized_image = ImageOps.fit(input_image, shirt.size)
-                # paste shirt.png on top of input image
+            # paste shirt.png on top of input image
             resized_image.paste(shirt, (0,0), shirt)
             resized_image.save(sys.argv[2])
             print(f"Image was successfully saved into {sys.argv[2]}")
